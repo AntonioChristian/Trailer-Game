@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Trailer Game</title>
+</head>
+<style>
+    *,
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #trailer {
+        min-width: 100%;
+        min-height: 100%;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    }
+
+    .intro {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: aliceblue;
+        padding: 20px;
+        font-size: 22px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    #btn {
+        border: none;
+        padding: 13px;
+        color: aliceblue;
+        background-color: rgb(94, 1, 1);
+        cursor: pointer;
+        font-weight: 800;
+        margin-top: 10px;
+        width: 200px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+</style>
+
+<body>
+    <video autoplay muted loop id="trailer">
+        <source src="trailer game.mp4" type="video/mp4">
+    </video>
+    <div class="intro">
+        <center>
+            <img src="roblox.png" alt="" width="100" height="100">
+            <p>POWERING IMAGINATION</p>
+            <button id="btn" onclick="pencetBtn()">PAUSE</button>
+        </center>
+    </div>
+    <script>
+        const trailer = document.getElementById('trailer')
+        const btn = document.getElementById('btn')
+        function pencetBtn() {
+            if(trailer.paused){
+                trailer.play()
+                btn.innerHTML = "PAUSE"
+            }else{
+                trailer.pause()
+                btn.innerHTML = "PLAY"
+            }
+        }
+    </script>
+</body>
+
+</html>
